@@ -15,6 +15,7 @@ import Shop from './Components/Pages/Shop/Shop';
 import Register from './Components/Pages/Register/Register';
 import Login from './Components/Pages/Login/Login';
 import AuthProvider from './Components/Route/AuthProvider/AuthProvider';
+import PrivateRouter from './Components/Route/PrivateRouter/PrivateRouter';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -27,11 +28,11 @@ const router = createBrowserRouter([
       },
       {
         path:"/pets",
-        element:<Pets></Pets>,
+        element:<PrivateRouter><Pets></Pets></PrivateRouter>,
       },
       {
         path:"/aboutUs",
-        element:<AboutUs></AboutUs>,
+        element:<PrivateRouter><AboutUs></AboutUs></PrivateRouter>,
       },
       {
         path:"/campaign",
@@ -43,7 +44,7 @@ const router = createBrowserRouter([
       },
       {
         path:"/shop",
-        element:<Shop></Shop>,
+        element:<PrivateRouter><Shop></Shop></PrivateRouter>,
       },
       {
         path:"/register",

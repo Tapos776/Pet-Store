@@ -12,6 +12,7 @@ const NavBar = () => {
     const nav = <>
         <NavLink className={'mx-4 font-bold text-xl border-r-[1px] py-2 px-4 text-white '} to={"/"}>Home</NavLink>
         <NavLink className={'mx-4 font-bold text-xl border-r-[1px] py-2 px-4 text-white '} to={"/aboutUs"}>About us</NavLink>
+        <NavLink className={'mx-4 font-bold text-xl border-r-[1px] py-2 px-4 text-white '} to={"/shop"}>Shope</NavLink>
         <NavLink className={'mx-4 font-bold text-xl border-r-[1px] py-2 px-4 text-white '} to={"/pets"}>Pets</NavLink>
         <NavLink className={'mx-4 font-bold text-xl border-r-[1px] py-2 px-4 text-white '} to={"/register"}>Register</NavLink>
         
