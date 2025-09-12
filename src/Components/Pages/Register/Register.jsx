@@ -1,8 +1,27 @@
 import Lottie from "lottie-react";
 import registerA from "../../../../public/pet/registerC.json"
+import { useContext } from "react";
+import { AuthContext } from "../../Route/AuthProvider/AuthProvider";
+import Swal from "sweetalert2";
 const Register = () => {
-    const userRegister =(e)=>{
+    const { signInWithUser } = useContext(AuthContext)
+    const userRegister = (e) => {
         e.preventDefault()
+        const form = e.target;
+        const name = form.name.value;
+        const email = form.email.value;
+        const phone = form.phone.value;
+        const password = form.password.value;
+        console.log(name, email, phone, [password]);
+        signInWithUser(email, password)
+            .then(() => {
+                Swal.fire({
+                    title: "User Register Successfully",
+                    icon: "success",
+                    draggable: true
+                });
+            })
+            .catch(error => { alert(" Register Failed", error.message) })
     }
     return (
         <div className="hero bg-base-200  ">
@@ -22,7 +41,7 @@ const Register = () => {
                                 <label className="label">Email</label>
                                 <input name="email" type="email" className="input" placeholder="Email" />
                                 <label className="label">Phone</label>
-                                <input name="phone" type="email" className="input" placeholder="Phone" />
+                                <input name="phone" type="text" className="input" placeholder="Phone" />
                                 <label className="label">Password</label>
                                 <input name="password" type="password" className="input" placeholder="Password" />
                                 <button className="btn btn-neutral mt-4">Register</button>
