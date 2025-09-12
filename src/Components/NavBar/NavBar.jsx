@@ -6,17 +6,25 @@ import { AuthContext } from "../Route/AuthProvider/AuthProvider";
 
 const NavBar = () => {
 
-    const { user } = useContext(AuthContext)
+    const { user, userOut } = useContext(AuthContext)
+    console.log(user);
+
     const nav = <>
         <NavLink className={'mx-4 font-bold text-xl border-r-[1px] py-2 px-4 text-white '} to={"/"}>Home</NavLink>
         <NavLink className={'mx-4 font-bold text-xl border-r-[1px] py-2 px-4 text-white '} to={"/aboutUs"}>About us</NavLink>
         <NavLink className={'mx-4 font-bold text-xl border-r-[1px] py-2 px-4 text-white '} to={"/pets"}>Pets</NavLink>
         <NavLink className={'mx-4 font-bold text-xl border-r-[1px] py-2 px-4 text-white '} to={"/register"}>Register</NavLink>
         
-
     </>
+
+    const handelLogOut = (e) => {
+        e.preventDefault()
+        userOut()
+            .then(() => { })
+            .catch((error) => { alert("ERROR", error.message) })
+    }
     return (
-        <div className="navbar bg-gray-700/20 shadow-lg  ">
+        <div className="navbar bg-gray-700/20 shadow-lg flex justify-between items-center ">
             <div className="navbar-start ">
                 <div className="dropdown ">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -37,7 +45,7 @@ const NavBar = () => {
             </div>
             <div>
                 {
-                    user && <NavLink className={'mx-4 font-bold text-xl border-r-[1px] py-2 px-4 text-white '} to={"/login"}>login</NavLink>
+                    user ? <div className="flex items-center gap-2"><h1 className="text-xl font-bold text-green-600">{user?.email}</h1> <button onClick={handelLogOut} className="btn btn-error  text-white font-bold">LogOut</button> </div> : <NavLink className={'mx-4 font-bold text-xl border-r-[1px] py-2 px-4 text-white bg-green-600 rounded-2xl '} to={"/login"}>LogIn</NavLink>
                 }
             </div>
         </div>
