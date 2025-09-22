@@ -3,8 +3,10 @@ import registerA from "../../../../public/pet/registerC.json"
 import { useContext } from "react";
 import { AuthContext } from "../../Route/AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router";
 const Register = () => {
     const { signInWithUser } = useContext(AuthContext)
+    const navigation= useNavigate()
     const userRegister = (e) => {
         e.preventDefault()
         const form = e.target;
@@ -20,6 +22,7 @@ const Register = () => {
                     icon: "success",
                     draggable: true
                 });
+                navigation("/")
             })
             .catch(error => { alert(" Register Failed", error.message) })
     }
