@@ -1,3 +1,4 @@
+import Marquee from "react-fast-marquee";
 import pets from "../../../public/pet/pet105.jpg"
 // eslint-disable-next-line no-unused-vars
 import { motion, scale } from "motion/react"
@@ -5,8 +6,8 @@ const MotionPage = () => {
     return (
         <div>
             <div className="flex justify-center items-center p-5 font-bold ">
-                <motion.h1 initial={{ scale: 0 }} animate={{ scale: 3, transition: { duration: 3,repeat: Infinity } }}  > FOR THE <motion.span animate={{color:["#052CAB", "#AB2105" , "#3105AB", "#0BAB05","#FFFB05","#FF05F7","#AC05FF"], transition:{duration:15 , repeat:Infinity }} }>LOVE</motion.span> IN THEM
-                    AND THE <motion.span animate={{color:["#AC05FF", "#0BAB05","#052CAB", "#AB2105" , "#3105AB", "#0BAB05","#FFFB05","#FF05F7","#AC05FF"], transition:{duration:15 , repeat:Infinity }} }>HUMANE</motion.span> IN US</motion.h1>
+                <motion.h1 initial={{ scale: 0 }} animate={{ scale: [1,3,1], transition: { duration: 3, repeat: Infinity } }}  > FOR THE <motion.span animate={{ color: ["#052CAB", "#AB2105", "#3105AB", "#0BAB05", "#FFFB05", "#FF05F7", "#AC05FF"], transition: { duration: 15, repeat: Infinity } }}>LOVE</motion.span> IN THEM
+                    AND THE <motion.span animate={{ color: ["#AC05FF", "#0BAB05", "#052CAB", "#AB2105", "#3105AB", "#0BAB05", "#FFFB05", "#FF05F7", "#AC05FF"], transition: { duration:1, repeat: Infinity } }}>HUMANE</motion.span> IN US</motion.h1>
             </div>
             <div className="flex justify-center items-center ">
                 <motion.img
@@ -21,8 +22,13 @@ const MotionPage = () => {
                     }}
                 />
             </div>
-            <div className=" font-bold text-green-400 p-10">
-                <marquee behavior="left" direction="5" repeat="infinity" className="text-3xl">With your support, we’ve changed lives in the community and promoted healthy relationships with the animals among us.There is still more work to do.</marquee>
+            <div className="bg-gray-200 p-3">
+                <div className=" font-bold text-green-400  flex bg-amber-50  gap-5  shadow-2xl shadow-gray-200 p-2 rounded-xl ">
+                    <div>
+                        <button className="btn btn-success text-xl font-bold text-amber-50">Pet</button>
+                    </div>
+                    <Marquee><p>With your support, we’ve changed lives in the community and promoted healthy relationships with the animals among us.There is still more work to do.</p><p>With your support, we’ve changed lives in the community and promoted healthy relationships with the animals among us.There is still more work to do.</p><p>With your support, we’ve changed lives in the community and promoted healthy relationships with the animals among us.There is still more work to do.</p></Marquee>
+                </div>
             </div>
 
         </div >
