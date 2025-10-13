@@ -10,6 +10,7 @@ import fly7 from '../../../public/../public/pet/pet7.jpg'
 import fly8 from '../../../public/../public/pet/pet8.jpg'
 import fly9 from '../../../public/../public/pet/pet9.jpg'
 import fly10 from '../../../public/../public/pet/pet10.jpg'
+import MotionPage from './MotionPage'
 const Displays = () => {
     const images = [
         fly1,
@@ -28,10 +29,10 @@ const Displays = () => {
     const quantity = images.length;
     return (
         <>
-        <div className=' '>
-            {/* The style tag is used to embed the CSS directly in the React component for a single-file app */}
-            <style>
-                {`
+            <div className=' '>
+                {/* The style tag is used to embed the CSS directly in the React component for a single-file app */}
+                <style>
+                    {`
                 .banner {
                     width: 100%;
                     height: 50vh;
@@ -77,32 +78,32 @@ const Displays = () => {
                     object-fit: cover;
                 }
                 `}
-            </style>
+                </style>
 
-            <div className='banner  '>
-                <img className='w-[100%] mx-auto shadow-2xl shadow-amber-400' src={fly10} alt="" />
-                {/* Correctly setting the CSS variable with the -- prefix and the correct quantity */}
-                <div className='slider' style={{ '--quantity': quantity }}>
-                    {/* Using map to dynamically render each item */}
-                    {images.map((src, index) => {
-                        const position = index + 1;
-                        return (
-                            // The key prop is crucial for React to manage list items efficiently
-                            // Correctly setting the --position CSS variable
-                            <div className='item' key={position} style={{ '--position': position }}>
-                                <img src={src} alt={`Pet image ${position}`} />
-                            </div>
-                        );
-                    })}
-                </div>              
+                <div className='banner  '>
+                    <img className='w-[100%] mx-auto shadow-2xl shadow-amber-400' src={fly10} alt="" />
+                    {/* Correctly setting the CSS variable with the -- prefix and the correct quantity */}
+                    <div className='slider' style={{ '--quantity': quantity }}>
+                        {/* Using map to dynamically render each item */}
+                        {images.map((src, index) => {
+                            const position = index + 1;
+                            return (
+                                // The key prop is crucial for React to manage list items efficiently
+                                // Correctly setting the --position CSS variable
+                                <div className='item' key={position} style={{ '--position': position }}>
+                                    <img src={src} alt={`Pet image ${position}`} />
+                                </div>
+                            );
+                        })}
+                    </div>
+                </div>
             </div>
-        </div>
 
-        <div >
-                    
-        </div>
+            <div >
+                 <MotionPage></MotionPage>       
+            </div>
         </>
-        
+
     );
 };
 
