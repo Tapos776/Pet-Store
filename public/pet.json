@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "title": "Adopt",
+        "photo": "https://i.ibb.co.com/JwxCTb7T/pet2.jpg",
+        "details": "Visit with our pets ready for adoption. Come meet your perfect match today!",
+        "button": "ALearn More"
+    },
+    {
+        "id": 2,
+        "title": "Foster",
+        "photo": "https://i.ibb.co.com/PspgQ9rJ/pet7.jpg",
+        "details": "Without fostering, there can be no rescue. Every year we save the lives of over 500 pets.",
+        "button": "Learn More"
+    },
+    {
+        "id": 3,
+        "title": "Donate",
+        "photo": "https://i.ibb.co.com/KpS9QRZk/pet9.jpg",
+        "details": "Every little bit counts! Your gene donation helps animals most in need.",
+        "button": "Learn More"
+    },
+    {
+        "id": 4,
+        "title": "Volunteer",
+        "photo": "https://i.ibb.co.com/R47Sv6fN/pet107.jpg",
+        "details": "You can help animals that we would otherwise not be able to facilitate.",
+        "button": "Learn More"
+    }
+]
+
+

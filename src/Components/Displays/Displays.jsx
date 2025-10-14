@@ -12,6 +12,7 @@ import fly9 from '../../../public/../public/pet/pet9.jpg'
 import fly10 from '../../../public/../public/pet/pet10.jpg'
 import MotionPage from './MotionPage'
 import SomeMotion from './SomeMotion'
+import AboutPet from './AboutPet'
 const Displays = () => {
     const images = [
         fly1,
@@ -105,6 +106,9 @@ const Displays = () => {
             </div>
             <div>
                 <SomeMotion></SomeMotion>
+            </div>
+            <div>
+                <AboutPet></AboutPet>
             </div>
         </>
 
