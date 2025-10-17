@@ -7,8 +7,6 @@ import { AuthContext } from "../Route/AuthProvider/AuthProvider";
 const NavBar = () => {
 
     const { user, userOut } = useContext(AuthContext)
-    console.log(user);
-
     const nav = <>
         <NavLink className={'mx-4 font-bold text-xl border-r-[1px] py-2 px-4 text-white '} to={"/"}>Home</NavLink>
         <NavLink className={'mx-4 font-bold text-xl border-r-[1px] py-2 px-4 text-white '} to={"/aboutUs"}>About us</NavLink>

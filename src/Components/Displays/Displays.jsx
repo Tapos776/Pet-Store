@@ -100,16 +100,16 @@ const Displays = () => {
                     </div>
                 </div>
             </div>
-
+            <div>
+                <AboutPet></AboutPet>
+            </div>
             <div >
-                 <MotionPage></MotionPage>       
+                <MotionPage></MotionPage>
             </div>
             <div>
                 <SomeMotion></SomeMotion>
             </div>
-            <div>
-                <AboutPet></AboutPet>
-            </div>
+
         </>
 
     );

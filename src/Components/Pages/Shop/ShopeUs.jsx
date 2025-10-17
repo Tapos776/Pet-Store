@@ -1,7 +1,6 @@
 
 
-const Shop = () => {
-    
+const ShopeUs = () => {
     return (
         <div>
             
@@ -9,4 +8,4 @@ const Shop = () => {
     );
 };
 
-export default Shop;
+export default ShopeUs;

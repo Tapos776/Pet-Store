@@ -2,16 +2,17 @@ import { useState } from "react";
 
 
 const AboutPet = () => {
-    const [pet, setPet] = useState([])
+    const [pet, setPets] = useState([])
     fetch('pet.json')
         .then(res => res.json())
-        .then(data => setPet(data))
+        .then(data => setPets (data))  
+         
     return (
         <div className="bg-[#a44345]">
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 ">
                 {
-                pet.map(cart => <div key={cart.id}>
+                pet.map(cart => <div key={cart.id} >
 
                     <div className="card h-[100%]">
                         <h2 className="m-5 text-center text-4xl font-black text-white">{cart.title}</h2>
@@ -28,7 +29,8 @@ const AboutPet = () => {
                             </div>
                         </div>
                     </div>
-                </div>)
+                </div>
+                )
             }
             </div>
         </div>
