@@ -1,8 +1,6 @@
 
 import BannerMotion from '../../Displays/BannerMotion';
-
-
-const Pets = () => {
+const Pets = () => {    
     return (
         <div>
             <BannerMotion></BannerMotion>    

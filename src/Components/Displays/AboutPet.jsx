@@ -5,8 +5,7 @@ const AboutPet = () => {
     const [pet, setPets] = useState([])
     fetch('pet.json')
         .then(res => res.json())
-        .then(data => setPets (data))  
-         
+        .then(data => setPets (data)) 
     return (
         <div className="bg-[#a44345]">
 

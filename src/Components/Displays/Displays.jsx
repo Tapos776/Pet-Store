@@ -28,7 +28,7 @@ const Displays = () => {
     ]
 
     // The total number of items is the length of the images array.
-    const quantity = images.length;
+    const quantity = images.length; 
     return (
         <>
             <div className=' '>

@@ -29,6 +29,7 @@ const router = createBrowserRouter([
       {
         path:"/pets",
         element:<PrivateRouter><Pets></Pets></PrivateRouter>,
+        
       },
       {
         path:"/aboutUs",
@@ -45,6 +46,7 @@ const router = createBrowserRouter([
       {
         path:"/shop",
         element:<PrivateRouter><Shop></Shop></PrivateRouter>,
+        loader:()=> fetch('http://localhost:5000/pet')
       },
       {
         path:"/register",
