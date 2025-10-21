@@ -1,13 +1,14 @@
+import { Link } from "react-router";
 
 
 
 const ShopeUs = ({ cart }) => {
 
-    const { title, location, jobType ,company_logo} = cart;
+    const { title, location, jobType ,company_logo ,_id} = cart;
 
     return (
         <div>
-            <div className="card bg-base-100 w-96 shadow-sm">
+            <div className="card bg-base-100  shadow-sm h-[500px]">
                 <figure className="px-10 pt-10">
                     <img
                         src={company_logo}
@@ -19,7 +20,7 @@ const ShopeUs = ({ cart }) => {
                     <h2 className="card-title">{jobType}</h2>
                     <p>{location}</p>
                     <div className="card-actions">
-                        <button className="btn btn-primary">Buy Now</button>
+                        <Link to={`${_id}`}><button className="btn btn-primary">View Now</button></Link>
                     </div>
                 </div>
             </div>
