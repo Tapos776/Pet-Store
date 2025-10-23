@@ -17,6 +17,7 @@ import Login from './Components/Pages/Login/Login';
 import AuthProvider from './Components/Route/AuthProvider/AuthProvider';
 import PrivateRouter from './Components/Route/PrivateRouter/PrivateRouter';
 import CartView from './Components/Pages/Shop/CartView';
+import ApplyShop from './Components/Pages/Shop/ApplyShop';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -54,6 +55,11 @@ const router = createBrowserRouter([
         element:<CartView></CartView>,
         loader:({params})=>fetch(`http://localhost:5000/pet/${params.id}`)
       },
+      {
+        path:"/buy/:id",
+        element:<PrivateRouter><ApplyShop></ApplyShop></PrivateRouter>
+      }
+      ,
       {
         path:"/register",
         element:<Register></Register>,

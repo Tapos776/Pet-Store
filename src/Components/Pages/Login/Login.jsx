@@ -3,9 +3,12 @@ import loginB from "../../../../public/pet/LoginB.json"
 import { useContext } from "react";
 import { AuthContext } from "../../Route/AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
+import { useLocation, useNavigate } from "react-router";
 const Login = () => {
     const { googleLogin ,loginUser} = useContext(AuthContext);
-
+    const navigate =useNavigate()
+    const location =useLocation();
+     const forms = location.state || "/";
 
     const userLogin =(e)=>{
         e.preventDefault();
@@ -19,7 +22,8 @@ const Login = () => {
                     title: "User Login Successfully",
                     icon: "success",
                     draggable: true
-                });           
+                });
+                navigate(forms)          
         })
         .catch(error=>{
             console.log(error.message);          
@@ -35,6 +39,7 @@ const Login = () => {
                     icon: "success",
                     draggable: true
                 });
+                navigate(forms)
 
             })
             .catch(error => {

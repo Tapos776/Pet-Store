@@ -1,8 +1,8 @@
-import { useLoaderData } from 'react-router';
+import { Link, useLoaderData } from 'react-router';
 
 const CartView = () => {
     const cart = useLoaderData()
-    const { title ,description,category,petType,location,company_logo} = cart
+    const { _id,title ,description,category,petType,location,company_logo} = cart
 
     return (
         <div>
@@ -19,7 +19,7 @@ const CartView = () => {
                     <p>{description}</p>
                     <p>{location}</p>
                     <div className="card-actions justify-end">
-                        <button className="btn btn-primary">Watch</button>
+                       <Link to={`/buy/${_id}`}> <button className="btn btn-primary">Buy</button></Link>
                     </div>
                 </div>
             </div>
